@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link th:href="@{/css/mycss.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+
+
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<thead>
+				<tr>
+					<th colspan="4">
+						<h1>Employee Database</h1>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+
+					<td><h2>
+							<a href="/insert"><button class="button">Insert</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/update"><button class="button">Update</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/secure/delete" th:href="@{/secure}">
+								<button class="button">Delete</button>
+							</a>
+						</h2></td>
+					<td><h2>
+							<a href="/view"><button class="button">View</button></a>
+						</h2></td>
+					<tr>
+					<td colspan="4"><h2>
+							<a href="#" th:href="@{/logout}"><button class="button">Logout</button></a>
+						</h2></td>
+				</tr>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

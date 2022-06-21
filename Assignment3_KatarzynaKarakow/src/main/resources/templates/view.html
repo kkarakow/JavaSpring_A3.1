@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/mycss.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>View</title>
+</head>
+<body>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<thead>
+				<tr>
+					<th>Employee ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Phone Number</th>
+					<th>Hire Date</th>
+					<th>Job ID</th>
+					<th>Salary</th>
+					<th>Commission %</th>
+					<th>Manager ID</th>
+					<th>Department ID</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="e:${employeeList}">
+					<td th:text="${e.EMPLOYEE_ID}">435422</td>
+					<td th:text="${e.FIRST_NAME}">Test</td>
+					<td th:text="${e.LAST_NAME}">Test</td>
+					<td th:text="${e.EMAIL}">test@test.com</td>
+					<td th:text="${e.PHONE_NUMBER}">123456789</td>
+					<td th:text="${e.HIRE_DATE}">2021-08-01</td>
+					<td th:text="${e.JOB_ID}">21414</td>
+					<td th:text="${e.SALARY}">400</td>
+					<td th:text="${e.COMMISSION_PCT}">0</td>
+					<td th:text="${e.MANAGER_ID}">325235</td>
+					<td th:text="${e.DEPARTMENT_ID}">10</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<tbody>
+				<tr>
+					<td><h2>
+							<a href="/"><button class="button">Home</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/insert"><button class="button">Insert</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/update"><button class="button">Update</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/secure/delete" th:href="@{/secure}">
+								<button class="button">Delete</button></a>
+						</h2></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

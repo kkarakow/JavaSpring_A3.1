@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/mycss.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>Insert Employee</title>
+</head>
+<body>
+	<div class="table-wrapper">
+		<form method="post" action="#" th:action="@{/processForm}"
+			th:object="${employee}">
+			<table class="fl-table">
+				<thead>
+					<tr>
+						<th colspan="4">Insert Employee</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Employee ID:</td>
+						<td><input type="number" th:field="*{EMPLOYEE_ID}"></td>
+					</tr>
+					<tr>
+						<td>First Name:</td>
+						<td><input type="text" th:field="*{FIRST_NAME}"></td>
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td><input type="text" th:field="*{LAST_NAME}"></td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><input type="email" th:field="*{EMAIL}"></td>
+					</tr>
+					<tr>
+						<td>Phone Number:</td>
+						<td><input type="number" th:field="*{PHONE_NUMBER}"></td>
+					</tr>
+					<tr>
+						<td>Hire Date:</td>
+						<td><input type="date" th:field="*{HIRE_DATE}"></td>
+					</tr>
+					<tr>
+						<td>Job ID:</td>
+						<td><input type="number" th:field="*{JOB_ID}"></td>
+					</tr>
+					<tr>
+						<td>Salary:</td>
+						<td><input type="number" th:field="*{SALARY}"></td>
+					</tr>
+					<tr>
+						<td>Commission %:</td>
+						<td><input type="number" th:field="*{COMMISSION_PCT}"></td>
+					</tr>
+					<tr>
+						<td>Manager ID:</td>
+						<td><input type="number" th:field="*{MANAGER_ID}"></td>
+					</tr>
+					<tr>
+						<td>Department ID:</td>
+						<td><select th:field="*{DEPARTMENT_ID}">
+								<option th:each="d:${departmentList}"
+									th:value="${d.DEPARTMENT_ID}" th:text="${d.DEPARTMENT_ID}">
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" class="button" value="Insert"></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<tbody>
+				<tr>
+					<td><h2>
+							<a href="/"><button class="button">Home</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/secure/delete" th:href="@{/secure}">
+								<button class="button">Delete</button>
+							</a>
+						</h2></td>
+					<td><h2>
+							<a href="/update"><button class="button">Update</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/view"><button class="button">View</button></a>
+						</h2></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

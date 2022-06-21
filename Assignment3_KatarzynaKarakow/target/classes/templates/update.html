@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/mycss.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>Update Employee</title>
+</head>
+<body>
+	<div class="table-wrapper">
+		<form method="post" action="#" th:action="@{/updateEmployee}"
+			th:object="${employee}">
+			<table class="fl-table">
+				<thead>
+					<tr>
+						<th colspan="2">Update Manager ID</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Employee ID:</td>
+						<td><select name="EMPLOYEE_ID" id="EMPLOYEE_ID">
+								<option th:each="e:${employeeList}" th:value="${e.EMPLOYEE_ID}"
+									th:text="${e.EMPLOYEE_ID}" />
+						</select></td>
+					</tr>
+					<tr>
+						<td>Manager ID:</td>
+						<td><input type="text" name="MANAGER_ID"
+							th:field="*{MANAGER_ID}" id="MANAGER_ID" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Update" class="button" id="submit" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<tbody>
+				<tr>
+					<td><h2>
+							<a href="/"><button class="button">Home</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/insert"><button class="button">Insert</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/secure/delete" th:href="@{/secure}">
+								<button class="button">Delete</button>
+							</a>
+						</h2></td>
+					<td><h2>
+							<a href="/view"><button class="button">View</button></a>
+						</h2></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</body>
+</html>

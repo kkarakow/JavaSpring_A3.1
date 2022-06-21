@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link th:href="@{/css/mycss.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>Delete Employee</title>
+</head>
+<body>
+	<div class="table-wrapper">
+		<form method="post" action="#" th:action="@{/deleteEmployee}"
+			th:object="${employee}">
+			<table class="fl-table">
+				<thead>
+					<tr>
+						<th colspan="2">Delete Employee</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td>Employee ID: <select name="EMPLOYEE_ID" id="EMPLOYEE_ID">
+								<option th:each="e:${employeeList}" th:value="${e.EMPLOYEE_ID}"
+									th:text="${e.EMPLOYEE_ID}" />
+						</select></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Delete" id="submit"
+							class="button" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<tbody>
+				<tr>
+					<td><h2>
+							<a href="/"><button class="button">Home</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/insert"><button class="button">Insert</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/update"><button class="button">Update</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="/view"><button class="button">View</button></a>
+						</h2></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
